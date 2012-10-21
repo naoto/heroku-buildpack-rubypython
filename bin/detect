@@ -2,19 +2,19 @@
 BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
 BUILD_DIR=$1
 CACHE_DIR=$2
-p=$($BIN_DIR/../python-bin/detect $BUILD_DIR $CACHE_DIR)
-pr=$?
 r=$($BIN_DIR/../ruby-bin/detect $BUILD_DIR $CACHE_DIR)
 rr=$?
+p=$($BIN_DIR/../python-bin/detect $BUILD_DIR $CACHE_DIR)
+pr=$?
 if [ $pr -ne 0 ] && [ $rr -ne 0 ]; then
     exit 1
 fi
-if [ $pr -eq 0 ] && [ $rr -ne 0 ]; then
-    echo $p
-    exit 0
-fi
 if [ $pr -ne 0 ] && [ $rr -eq 0 ]; then
     echo $r
+    exit 0
+fi
+if [ $pr -eq 0 ] && [ $rr -ne 0 ]; then
+    echo $p
     exit 0
 fi
 if [ $pr -eq 0 ] && [ $rr -eq 0 ]; then
