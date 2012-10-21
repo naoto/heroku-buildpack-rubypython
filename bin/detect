@@ -1,9 +1,10 @@
 #! /usr/bin/env bash
+BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
 BUILD_DIR=$1
 CACHE_DIR=$2
-p=$(../python-bin/detect $BUILD_DIR $CACHE_DIR)
+p=$($BIN_DIR/../python-bin/detect $BUILD_DIR $CACHE_DIR)
 pr=$?
-r=$(../ruby-bin/detect $BUILD_DIR $CACHE_DIR)
+r=$($BIN_DIR/../ruby-bin/detect $BUILD_DIR $CACHE_DIR)
 rr=$?
 if [ $pr -ne 0 && $rr -ne 0 ]; then
     exit 1
