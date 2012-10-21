@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
-BUILD_DIR = $1
-CACHE_DIR = $2
+BUILD_DIR=$1
+CACHE_DIR=$2
 p=$(../python-bin/detect $BUILD_DIR $CACHE_DIR)
 pr=$?
 r=$(../ruby-bin/detect $BUILD_DIR $CACHE_DIR)
