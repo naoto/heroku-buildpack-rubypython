@@ -6,8 +6,8 @@ $pr = $?
 $BIN_DIR/../ruby-bin/detect $BUILD_DIR $null > /dev/null
 $rr = $?
 if [ $pr -eq 0 ]; then
-    ../python-bin/release $BUILD_DIR
+    $BIN_DIR/../python-bin/release $BUILD_DIR
 fi
 if [ $rr -eq 0 ]; then
-    ../ruby-bin/release $BUILD_DIR
+    $BIN_DIR/../ruby-bin/release $BUILD_DIR
 fi

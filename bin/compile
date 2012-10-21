@@ -7,8 +7,8 @@ $pr = $?
 $BIN_DIR/../ruby-bin/detect $BUILD_DIR $CACHE_DIR > /dev/null
 $rr = $?
 if [ $pr -eq 0 ]; then
-    ../python-bin/compile $BUILD_DIR $CACHE_DIR
+    $BIN_DIR/../python-bin/compile $BUILD_DIR $CACHE_DIR
 fi
 if [ $rr -eq 0 ]; then
-    ../ruby-bin/compile $BUILD_DIR $CACHE_DIR
+    $BIN_DIR/../ruby-bin/compile $BUILD_DIR $CACHE_DIR
 fi
