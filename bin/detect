@@ -9,10 +9,15 @@ rr=$?
 if [ $pr -ne 0 ] && [ $rr -ne 0 ]; then
     exit 1
 fi
-if [ $pr -eq 0 ]; then
+if [ $pr -eq 0 ] && [ $rr -ne 0 ]; then
     echo $p
+    exit 0
 fi
-if [ $rr -eq 0 ]; then
+if [ $pr -ne 0 ] && [ $rr -eq 0 ]; then
     echo $r
+    exit 0
+fi
+if [ $pr -eq 0 ] && [ $rr -eq 0 ]; then
+    echo $r+$p
 fi
 exit 0
