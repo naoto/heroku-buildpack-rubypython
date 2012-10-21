@@ -6,7 +6,7 @@ p=$($BIN_DIR/../python-bin/detect $BUILD_DIR $CACHE_DIR)
 pr=$?
 r=$($BIN_DIR/../ruby-bin/detect $BUILD_DIR $CACHE_DIR)
 rr=$?
-if [ $pr -ne 0 && $rr -ne 0 ]; then
+if [ $pr -ne 0 ] && [ $rr -ne 0 ]; then
     exit 1
 fi
 if [ $pr -eq 0 ]; then

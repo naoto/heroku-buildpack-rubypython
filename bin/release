@@ -2,9 +2,9 @@
 BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
 BUILD_DIR=$1
 $BIN_DIR/../python-bin/detect $BUILD_DIR $null > /dev/null
-$pr = $?
+pr=$?
 $BIN_DIR/../ruby-bin/detect $BUILD_DIR $null > /dev/null
-$rr = $?
+rr=$?
 if [ $pr -eq 0 ]; then
     $BIN_DIR/../python-bin/release $BUILD_DIR
 fi
