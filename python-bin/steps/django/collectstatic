@@ -8,6 +8,8 @@ indent() {
   [ $(uname) == "Darwin" ] && sed -l "$RE" || sed -u "$RE"
 }
 
+# Try to generatemedia if it's applicable
+python $MANAGE_FILE generatemedia &> /dev/null
 
 # Check if collectstatic is configured properly.
 python $MANAGE_FILE collectstatic --dry-run --noinput &> /dev/null && RUN_COLLECTSTATIC=true
