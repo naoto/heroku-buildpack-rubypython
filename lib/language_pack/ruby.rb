@@ -5,15 +5,16 @@ require "language_pack/base"
 
 # base Ruby Language Pack. This is for any base ruby app.
 class LanguagePack::Ruby < LanguagePack::Base
-  BUILDPACK_VERSION   = "v40"
+  BUILDPACK_VERSION   = "v62"
   LIBYAML_VERSION     = "0.1.4"
   LIBYAML_PATH        = "libyaml-#{LIBYAML_VERSION}"
-  BUNDLER_VERSION     = "1.2.1"
+  BUNDLER_VERSION     = "1.3.2"
   BUNDLER_GEM_PATH    = "bundler-#{BUNDLER_VERSION}"
   NODE_VERSION        = "0.4.7"
   NODE_JS_BINARY_PATH = "node-#{NODE_VERSION}"
-  JVM_BASE_URL        = "http://heroku-jvm-langpack-java.s3.amazonaws.com"
+  JVM_BASE_URL        = "http://heroku-jdk.s3.amazonaws.com"
   JVM_VERSION         = "openjdk7-latest"
+  DEFAULT_RUBY_VERSION = "ruby-2.0.0"
 
   # detects if this is a valid Ruby app
   # @return [Boolean] true if it's a Ruby app
